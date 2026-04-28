@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "linux-assistant"
+version = "0.1.0"
+description = "CLI assistant that converts natural language into Linux operations using LangChain and OpenAI-compatible APIs."
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "langchain>=0.3.0",
+  "langchain-openai>=0.2.0",
+  "pydantic>=2.8.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+linux-assistant = "linux_assistant.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/linux_assistant"]
